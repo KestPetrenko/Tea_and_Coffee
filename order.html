@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>order</title>
+    <style>
+    
+    </style>
+</head>
+
+<body>
+    <div class="section_Order">
+        <header class="header_order">
+            <h1 class="h1Order">Coffee house</h1>
+        </header>
+        <div class="div_order">
+            <section class="sectionOrder">
+                <div class="divOrder_name">
+                    <p class="textOrder">Назва</p>
+                    <p class="amountOrder_1">Кількість</p>
+                    <p class="priceOrder_1">Ціна</p>
+                    <p class="sumPriceAmount_1">Всього</p>
+                </div>
+
+            </section>
+            <div class="divSum">
+                <p class="textSum">До сплати:</p>
+                <p class="sumPrice"></p>
+                <button class="btn_oform">Оформити замовлення</button>
+            </div>
+        </div>
+    </div>
+    <script src="script/all_tea.js"></script>
+    <script src="script/order.js"></script>
+    <script>
+        let sectionOrder = document.querySelector(".sectionOrder");
+        let sumPrice = document.querySelector(".sumPrice");
+
+        let arrayOrder1;
+        arrayOrder1 = JSON.parse(localStorage.getItem("order"));
+        arrayOrder1.forEach(element => {
+            addOrder2(sectionOrder, element);
+        });
+
+        addOrder2(sectionOrder);
+
+    </script>
+
+    <script src="script/price.js"></script>
+</body>
+
+</html>
