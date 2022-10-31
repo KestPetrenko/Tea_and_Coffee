@@ -1,56 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/html"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style/style.css"><title>order</title><style>.section_form {
+            width: 600px;
+            border: 3px solid #032373;
+            padding: 2%;
+            display: none;
+            z-index: 2;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }</style></head><body><div class="section_Order"><header class="header_order"><h1 class="h1Order">Coffee house</h1></header><div class="div_order"><section class="sectionOrder"><div class="divOrder_name"><p class="textOrder">Назва</p><p class="amountOrder_1">Кількість</p><p class="priceOrder_1">Ціна</p><p class="sumPriceAmount_1">Всього</p></div></section><div class="divSum"><p class="textSum">До сплати:</p><p class="sumPrice"></p><button class="btn_oform">Оформити замовлення</button></div></div></div><section class="section_form"><form><div class="form-group"><label>Ім'я</label> <input type="text" name="firstNameInput" required></div><div class="form-group"><label>Прізвище</label> <input type="text" name="lastNameInput" required></div><div class="form-group"><label>Email</label> <input type="email" name="emailInput" required></div><div class="form-group"><label>Адреса</label> <input type="text" name="address" required></div><div class="form-group"><input type="submit" value="Замовити"></div></form></section><script src="/script/all_tea.js"></script><script src="script/order.js"></script><script>let sectionOrder = document.querySelector(".sectionOrder");
+    let sumPrice = document.querySelector(".sumPrice");
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <title>order</title>
-    <style>
-    
-    </style>
-</head>
+    let arrayOrder1;
+    arrayOrder1 = JSON.parse(localStorage.getItem("order"));
+    arrayOrder1.forEach(element => {
+        addOrder2(sectionOrder, element);
+    });
 
-<body>
-    <div class="section_Order">
-        <header class="header_order">
-            <h1 class="h1Order">Coffee house</h1>
-        </header>
-        <div class="div_order">
-            <section class="sectionOrder">
-                <div class="divOrder_name">
-                    <p class="textOrder">Назва</p>
-                    <p class="amountOrder_1">Кількість</p>
-                    <p class="priceOrder_1">Ціна</p>
-                    <p class="sumPriceAmount_1">Всього</p>
-                </div>
+    addOrder2(sectionOrder);
 
-            </section>
-            <div class="divSum">
-                <p class="textSum">До сплати:</p>
-                <p class="sumPrice"></p>
-                <button class="btn_oform">Оформити замовлення</button>
-            </div>
-        </div>
-    </div>
-    <script src="script/all_tea.js"></script>
-    <script src="script/order.js"></script>
-    <script>
-        let sectionOrder = document.querySelector(".sectionOrder");
-        let sumPrice = document.querySelector(".sumPrice");
-
-        let arrayOrder1;
-        arrayOrder1 = JSON.parse(localStorage.getItem("order"));
-        arrayOrder1.forEach(element => {
-            addOrder2(sectionOrder, element);
-        });
-
-        addOrder2(sectionOrder);
-
-    </script>
-
-    <script src="script/price.js"></script>
-</body>
-
-</html>
+    let btnoform = document.querySelector('.btn_oform');
+    let sectionform = document.querySelector('.section_form');
+    btnoform.addEventListener('click', openOrder);
+    function openOrder(){
+        sectionform.style.display = "flex"
+    }</script><script src="script/price.js"></script></body></html>

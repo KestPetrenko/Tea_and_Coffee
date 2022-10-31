@@ -1,43 +1,4 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style/style.css">
-    <title>organic coffee</title>
-</head>
-<body>
-    <header class="header_order">
-        <h1 class="h1Order">Coffee house</h1>
-        <img src="img/50.png" alt="" class="imgOrder" onclick="document.location='order.html'">
-    </header>
-    <div id="addBg"> Додано в кошик</div>
-    <div id="catalog_sublimated_coffee" class="catalog"></div>
-    <template id="product">
-        <div>
-            <div class="bg" style="background-image: url('{{imagePath}}');"></div>
-            <p class="title">{{title}}</p>
-            <div class="divUAH">
-                <p class="price item_price">{{price}}</p>
-                <p>&nbsp;UAH</p>
-            </div>
-            <button class="btn_buy">Купити</button>
-        </div>
-    </template>
-    <script src="script/mustache.min.js"></script>
-    <script src="script/product.js"></script>
-    <script src="script/catalog.js"></script>
-    <script src="script/order.js"></script>
-    <script>
-       arrayOrganicCoffee.forEach(element => {
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1"><meta http-equiv="X-UA-Compatible" content="ie=edge"><link rel="stylesheet" href="style/style.css"><title>organic coffee</title></head><body><header class="header_order"><h1 class="h1Order">Coffee house</h1><img src="img/50.png" alt="" class="imgOrder" onclick="document.location='order.html'"></header><div id="addBg">Додано в кошик</div><div id="catalog_sublimated_coffee" class="catalog"></div><template id="product"><div><div class="bg" style="background-image: url('{{imagePath}}');"></div><p class="title">{{title}}</p><div class="divUAH"><p class="price item_price">{{price}}</p><p>&nbsp;UAH</p></div><button class="btn_buy">Купити</button></div></template><script src="script/mustache.min.js"></script><script src="script/product.js"></script><script src="script/catalog.js"></script><script src="script/order.js"></script><script>arrayOrganicCoffee.forEach(element => {
         catalog_sublimated_coffee.add(new Product(...element));
         });
-        catalog_sublimated_coffee.show();
-    </script>
-     <script src="script/price.js"></script>
-</body>
-
-</html>
+        catalog_sublimated_coffee.show();</script><script src="script/price.js"></script></body></html>
